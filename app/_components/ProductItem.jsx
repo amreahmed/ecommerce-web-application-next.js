@@ -23,7 +23,7 @@ const ProductItem = ({ product }) => {
             </h2>
                 </div>
                 <h2 className='text-black'>
-                    {product?.attributes?.price}$
+                    {product?.attributes?.price}EGP
                 </h2>
         </div>
       </Link>

@@ -38,7 +38,7 @@ const Cart = () => {
 
                   <div>
                     <dt className="inline">Price:</dt>
-                    <dd className="inline"> ${item.product.attributes?.price}</dd>
+                    <dd className="inline"> {item.product.attributes?.price} EGP</dd>
                   </div>
                 </dl>
               </div>

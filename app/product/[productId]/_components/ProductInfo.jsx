@@ -40,27 +40,34 @@ const ProductInfo = ({ product }) => {
     }
   };
     return (
-        <>
-         {product?.id ? (
+      <>
+        {product?.id ? (
           <div>
-      <h2 className="text-xl text-black">{product?.attributes?.title}</h2>
-      <h2 className="text-md text-black">{product?.attributes?.category}</h2>
-      <h2 className="text-sm mt-5 text-black">{product?.attributes?.description[0]?.children[0]?.text}</h2>
-      <h2 className="text-xs text-gray-500 mt-3 flex gap-2 items-center">
-        {product?.attributes?.instantDelivery ? <BadgeCheck className="text-green-500 w-5 h-5" /> : <AlertOctagon />} Eligible For Instant
-        Delevery
-      </h2>
-      <h2 className="text-3xl text-primary mt-3 pb-3">$ {product?.attributes?.price}</h2>
+            <h2 className="text-xl text-black">{product?.attributes?.title}</h2>
+            <h2 className="text-md text-black">{product?.attributes?.category}</h2>
+            <h2 className="text-sm mt-5 text-black">{product?.attributes?.description[0]?.children[0]?.text}</h2>
+            <h2 className="text-xs text-gray-500 mt-3 flex gap-2 items-center">
+              {product?.attributes?.instantDelivery ? (
+                <BadgeCheck className="text-green-500 w-5 h-5" />
+              ) : (
+                <AlertOctagon />
+              )}{" "}
+              Eligible For Instant Delevery
+            </h2>
+            <h2 className="text-3xl text-primary mt-3 pb-3">{product?.attributes?.price} EGP</h2>
 
-      <button onClick={() => handleAddToCart()} className="flex gap-2 bg-primary hover:bg-green-500 p-3 rounded-lg ">
-        <ShoppingCart />
-        Add To Cart
-      </button>
-      </div>
-         ) : <SkeletonProductInfo />}   
-        </>
-           
-  );
+            <button
+              onClick={() => handleAddToCart()}
+              className="flex gap-2 bg-primary hover:bg-green-500 p-3 rounded-lg ">
+              <ShoppingCart />
+              Add To Cart
+            </button>
+          </div>
+        ) : (
+          <SkeletonProductInfo />
+        )}
+      </>
+    );
 }
 
 export default ProductInfo

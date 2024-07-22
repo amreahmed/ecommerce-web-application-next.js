@@ -94,7 +94,7 @@ const Page = () => {
                   <dl className="space-y-0.5 text-sm text-gray-900">
                     <div className="flex justify-between !text-base font-medium">
                       <dt>Total</dt>
-                      <dd>${getTotalAmount()}</dd>
+                      <dd>{getTotalAmount()} EGP</dd>
                     </div>
                   </dl>
 
