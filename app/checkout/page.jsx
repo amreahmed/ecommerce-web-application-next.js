@@ -1,5 +1,6 @@
 "use client";
-import React, { Suspense } from "react";
+import React from "react";
+import { Suspense } from "react";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./_components/CheckoutForm";
@@ -16,7 +17,7 @@ function Checkout() {
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Elements stripe={stripePromise} options={options}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense>
           <CheckoutForm amount={Number(searchParams.get("amount"))} />
         </Suspense>
       </Elements>
