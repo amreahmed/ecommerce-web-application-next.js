@@ -4,7 +4,7 @@ import ProductSection from './_components/ProductSection'
 
 const Home = () => {
   return (
-    <div className="bg-[#111827]">
+    <div className="bg-white">
       <Hero />
       <ProductSection />
     </div>
